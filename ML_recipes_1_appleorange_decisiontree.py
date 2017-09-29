@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
-
 import sklearn
 from sklearn import tree
 #features=[[140,'smooth'],[130,'smooth'],[150,'bumpy'],[170,'bumpy']]
