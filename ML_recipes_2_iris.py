@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep 29 16:39:36 2017
-
-@author: akanshajain
-"""
 from sklearn.datasets import load_iris
 import numpy as np
 from sklearn import tree
