@@ -1,0 +1,40 @@
+All the following steps needs to be run in terminal window withhh the required configuration mentioned for using tensorflow that can be found in Step 1. Detailed description of each step can be found at https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/
+
+Step 1. Install Tensorflow: https://www.tensorflow.org/install/
+
+Step 2. Clone the git for Tensorflow For poets : git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
+
+Step 3. Change your urrent working directory to : cd tensorflow-for-poets-2
+
+Step 4. Download images: curl http://download.tensorflow.org/example_images/flower_photos.tgz \
+
+Step 5. Extract them in the folder called tf_files: tar xz -C tf_files
+
+Step 6. Check: ls tf_files/flower_photos
+
+Step 7. Set: IMAGE_SIZE=224
+
+Step 8. Set: ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
+
+Step 9. Start tensorboard in another terminal: tensorboard --logdir tf_files/training_summaries &
+
+Step 10. Check Retraining options: python -m scripts.retrain -h
+
+Step 11. Retrain the Final layer of mobilenet: 
+python -m scripts.retrain \
+  --bottleneck_dir=tf_files/bottlenecks \
+  --how_many_training_steps=500 \
+  --model_dir=tf_files/models/ \
+  --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" \
+  --output_graph=tf_files/retrained_graph.pb \
+  --output_labels=tf_files/retrained_labels.txt \
+  --architecture="${ARCHITECTURE}" \
+  --image_dir=tf_files/flower_photos
+
+Step 12. Check Prediction options: python -m  scripts.label_image -h
+
+Step 13. Test and Predict on a different image:
+python -m scripts.label_image \
+    --graph=tf_files/retrained_graph.pb  \
+    --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
+
