@@ -3,7 +3,7 @@ Detailed description of each step can be found at https://codelabs.developers.go
 
 Step 1. Install Tensorflow: https://www.tensorflow.org/install/
 
-Step 2. Clone the git for Tensorflow For poets : **git clone https://github.com/googlecodelabs/tensorflow-for-poets-2**
+Step 2. Clone the git for Tensorflow For poets : git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
 
 Step 3. Change your urrent working directory to : cd tensorflow-for-poets-2
 
